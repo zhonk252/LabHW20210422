@@ -1,0 +1,109 @@
+:root {
+    --font-cursive: 'Zen Dots', cursive;;
+    --font-body: 'Zen Dots', cursive;;
+    --step--2: clamp(1.04rem, 1.04rem + 0.00vw, 1.04rem);
+    --step--1: clamp(1.25rem, 1.23rem + 0.10vw, 1.30rem);
+    --step-0: clamp(1.50rem, 1.45rem + 0.24vw, 1.63rem);
+    --step-1: clamp(1.80rem, 1.71rem + 0.45vw, 2.03rem);
+    --step-2: clamp(2.16rem, 2.01rem + 0.74vw, 2.54rem);
+    --step-3: clamp(2.59rem, 2.36rem + 1.14vw, 3.17rem);
+    --step-4: clamp(3.11rem, 2.78rem + 1.67vw, 3.97rem);
+    --step-5: clamp(3.73rem, 3.25rem + 2.39vw, 4.96rem);
+ }
+ 
+ [data-theme='light'] {
+    --color-background: rgb(255, 0, 98);
+    --color-border: rgb(255, 151, 196);
+    --color-primary: rgb(75, 75, 255);
+    --color-text: rgb(255, 255, 255);
+ }
+ 
+ [data-theme='dark'] {
+    --color-background: rgb(57, 57, 57);
+    --color-border: rgba(149, 0, 255, 0.392);
+    --color-primary: rgba(119, 0, 255, 0.8);
+    --color-text: rgb(0, 0, 0);
+    --img-opacity: 0.6;
+ }
+ [data-theme='light'] .light {
+    display: none;
+ }
+ [data-theme='dark'] .dark {
+    display: none;
+ }
+
+ label{
+     display: flex;
+
+ }
+ 
+ * { box-sizing: border-box; }
+ 
+ html {
+    background-color: var(--color-background);
+    font-family: var(--font-body);
+    font-size: 62.5%;
+    height: 100%;
+ }
+ 
+ body {
+    background-color: var(--color-background);
+    border: 2vw solid var(--color-border);
+    color: var(--color-text);
+    font-size: 16px;
+    min-height: 100%;
+    padding: 3vw;
+    transition: background-color 0.25s ease-out, color 0.25s ease-out;
+ }
+ 
+ h1 {
+
+    font-family: var(--font-cursive);
+    font-size: var(--step-5);
+ }
+ 
+ h2 {
+
+    font-family: var(--font-cursive);
+    font-size: var(--step-4);
+ }
+ 
+ h3 {
+
+    font-family: var(--font-cursive);
+    font-size: var(--step-3);
+ }
+ 
+
+ p{
+     text-align: center;
+     padding:2rem;
+     margin-left: 20vw;
+     margin-right: 10vw;
+ }
+ 
+ img {
+    opacity: var(--img-opacity);
+    transition: opacity 0.25s ease-out;
+    width: 40vw;
+    height: 100vh;
+    padding:2rem;
+ }
+ 
+ img:hover {
+    opacity: 1;
+ }
+ 
+ .grid {
+    display: flex;
+    flex-flow: row wrap;
+ }
+ 
+ @media (min-width: 62em) {
+    .grid.halves > .column {
+       flex: 1 1 50%;
+    }
+    .grid.thirds > .column {
+       flex: 1 1 calc(100% / 3);
+    }
+ }
